@@ -12,12 +12,15 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-
+import Navbar from 'components/Navbar';
 import GlobalStyle from '../../global-styles';
 
 export default function App() {
+  const menuItems = ['posts', 'links', 'projects', 'random'];
+
   return (
     <div>
+      <Navbar menuItems={menuItems} />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
